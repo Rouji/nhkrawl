@@ -67,7 +67,7 @@ def main(target_dir):
                 pass
 
             try:
-                filename = (date.strftime('%Y-%m-%d') + '_' if date else '') + title
+                filename = (date.strftime('%Y-%m-%d') + '_' if date else '') + title + '.txt'
                 with open(os.path.join(target_dir, filename), 'w') as file:
                     file.write(title + '\n')
                     file.write(text)
