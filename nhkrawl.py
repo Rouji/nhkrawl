@@ -49,7 +49,7 @@ def main(target_dir):
             url = 'https://www3.nhk.or.jp/news/' + link
             req = urllib.request.urlopen(url, timeout=10)
             html = req.read().decode('utf-8')
-            soup = BeautifulSoup(html)
+            soup = BeautifulSoup(html, 'lxml')
             text = '\n'.join(node.text for node in (
                     soup.findAll('div', {'id': 'news_textbody'}) +
                     soup.findAll('div', {'id': 'news_textmore'})))
